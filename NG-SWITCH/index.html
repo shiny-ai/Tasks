@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="LibraryApp">
+    <head>
+        <title>Library Book Genres</title>
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body background="https://c8.alamy.com/comp/2HC03MR/book-border-isolated-on-white-background-literature-banner-with-copy-space-for-text-2HC03MR.jpg">
+        <div ng-controller="GenreController as genreCtrl">
+            <h2>Select Book Genre</h2>
+            <select ng-model="genreCtrl.selectGenre">
+                <option value="Fiction">Fictional</option>
+                <option value="comics">comics</option>
+                <option value="Crime">Crime</option>
+                <option value="Horror">Horror</option>
+            </select>
+        
+        <div ng-switch="genreCtrl.selectGenre">
+            <div ng-switch-when="Fiction">
+                <h3>Fiction</h3>
+                <p>Here in this fiction section, you will explore the imaginary and unusual
+                     fictioanl experiencs with extra-ordinary stories</p>
+                <img src="https://www.realsimple.com/thmb/KrGb42aamhHKaMzWt1Om7U42QsY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/great-books-for-anytime-2000-4ff4221eb1e54b659689fef7d5e265d5.jpg" length="30%" width="30%">
+            </div>
+            <div ng-switch-when="comics">
+                <h3>comics</h3>
+                <p>Here in this comics section, you will experience the ultimate super heroes and humans with super 
+                    abilities of marveland DC</p>
+                    <img src="https://thecosmiccircus.com/wp-content/uploads/2023/06/new_comics_spotlight_27786801634776914888-1.jpg" length="30%" width="30%">
+            </div>
+            <div ng-switch-when="Crime">
+                <h3>Crime</h3>
+                <p>Here in this crime section of books, you will come to know about the real time killers and the mistery 
+                    behind the cases that are unsolved</p>
+                    <img src="https://assets.penguinrandomhouse.com/wp-content/uploads/2022/01/23144959/PRH_Crime_1200x628.jpg" length="30%" width="30%">
+
+            </div>
+            <div ng-switch-when="Horror">
+                <h3>Horror</h3>
+                <p>Here in this horror section, you will find new super natural spirits that 
+                    has a belief of ghosting humans for a long</p>
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/bestbooks-2-6446ef8c643b3.jpg?crop=0.502xw:1.00xh;0.245xw,0&resize=640:*" length="30%" width="30%">
+            </div>
+            <div ng-switch-default>
+                <h3>Select a Genre</h3>
+                <p>Please select a book genre to continue</p>
+            </div>
+        </div>
+    </div>
+        <script>
+            angular.module('LibraryApp',[])
+            .controller('GenreController',function(){
+                var genreCtrl=this;
+                genreCtrl.selectedGenre="";
+            })
+        </script>
+    </body>
+</html>
